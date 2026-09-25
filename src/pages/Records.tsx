@@ -1,0 +1,19 @@
+import { PageContainer, PageHeader } from '../components/ui/PageHeader'
+import { EmptyState } from '../components/ui/Spinner'
+
+export function Records() {
+  return (
+    <PageContainer>
+      <PageHeader title="Records" description="Browse and manage student records." />
+      <EmptyState
+        title="No records yet"
+        description="Record management will be available in the next stage."
+        icon={
+          <svg className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        }
+      />
+    </PageContainer>
+  )
+}

@@ -1,0 +1,68 @@
+import type { UserRole, StudentStatus, DocumentStatus, VerificationStatus, AlertStatus } from './types'
+
+export const ROLE_LABELS: Record<UserRole, string> = {
+  admin: 'Administrator',
+  staff: 'Staff',
+  viewer: 'Viewer',
+}
+
+export const STUDENT_STATUS_LABELS: Record<StudentStatus, string> = {
+  active: 'Active',
+  inactive: 'Inactive',
+  graduated: 'Graduated',
+  withdrawn: 'Withdrawn',
+}
+
+export const STUDENT_STATUS_COLORS: Record<StudentStatus, string> = {
+  active: 'bg-green-100 text-green-700',
+  inactive: 'bg-neutral-100 text-neutral-600',
+  graduated: 'bg-blue-100 text-blue-700',
+  withdrawn: 'bg-red-100 text-red-700',
+}
+
+export const DOCUMENT_STATUS_LABELS: Record<DocumentStatus, string> = {
+  pending: 'Pending',
+  analyzed: 'Analyzed',
+  verified: 'Verified',
+  rejected: 'Rejected',
+}
+
+export const DOCUMENT_STATUS_COLORS: Record<DocumentStatus, string> = {
+  pending: 'bg-amber-100 text-amber-700',
+  analyzed: 'bg-blue-100 text-blue-700',
+  verified: 'bg-green-100 text-green-700',
+  rejected: 'bg-red-100 text-red-700',
+}
+
+export const VERIFICATION_STATUS_LABELS: Record<VerificationStatus, string> = {
+  verified: 'Verified',
+  rejected: 'Rejected',
+  pending: 'Pending',
+}
+
+export const ALERT_STATUS_LABELS: Record<AlertStatus, string> = {
+  current: 'Current',
+  expiring_soon: 'Expiring Soon',
+  expired: 'Expired',
+  no_expiry: 'No Expiry',
+}
+
+export const ALERT_STATUS_COLORS: Record<AlertStatus, string> = {
+  current: 'bg-green-100 text-green-700',
+  expiring_soon: 'bg-amber-100 text-amber-700',
+  expired: 'bg-red-100 text-red-700',
+  no_expiry: 'bg-neutral-100 text-neutral-500',
+}
+
+export const NAV_ITEMS = [
+  { label: 'Dashboard', path: '/', icon: 'dashboard', roles: ['admin', 'staff', 'viewer'] as UserRole[] },
+  { label: 'Students', path: '/students', icon: 'students', roles: ['admin', 'staff', 'viewer'] as UserRole[] },
+  { label: 'Records', path: '/records', icon: 'records', roles: ['admin', 'staff', 'viewer'] as UserRole[] },
+  { label: 'Documents', path: '/documents', icon: 'documents', roles: ['admin', 'staff', 'viewer'] as UserRole[] },
+  { label: 'Smart Search', path: '/search', icon: 'search', roles: ['admin', 'staff', 'viewer'] as UserRole[] },
+  { label: 'Verification', path: '/verification', icon: 'verification', roles: ['admin', 'staff'] as UserRole[] },
+  { label: 'Expiry Alerts', path: '/expiry', icon: 'expiry', roles: ['admin', 'staff', 'viewer'] as UserRole[] },
+  { label: 'User Management', path: '/admin/users', icon: 'users', roles: ['admin'] as UserRole[] },
+  { label: 'Audit History', path: '/admin/audit', icon: 'audit', roles: ['admin'] as UserRole[] },
+  { label: 'Settings', path: '/settings', icon: 'settings', roles: ['admin'] as UserRole[] },
+] as const
